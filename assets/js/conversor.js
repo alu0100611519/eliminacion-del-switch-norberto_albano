@@ -1,15 +1,6 @@
 (function(exports) {
   "use strict";
 
-  function Medida(valor,tipo)
-  {
-    /* tipo es opcional. Debería admitir  new Medida("45.2 Km") */
-    /* ademas de new Medida(45.2, "Km") */
-    this.value = valor;
-    this.type = tipo;
-
-  }
-
   function Temperatura(valor,tipo)
   {
     /* tipo es opcional. Debería admitir new Medida("45.2 F") */
