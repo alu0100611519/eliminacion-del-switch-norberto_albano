@@ -18,7 +18,7 @@
 
   }
 
-  Media.match = function(valor){
+  Medida.match = function(valor){
     regexpression    = XRegExp('(?<valor> [-+]?\\d+(?:\.\\d+)?(?:e[+-]?\\d+)?\\s*) -?   #val  \n' +
                         '(?<tipo1> ([cCfFkK])\\s* ) -?    #tipo1     \n' +
                         '(?<to>       (?:to)?)\\s*                                        # to           \n' +
@@ -27,15 +27,15 @@
     return valor;
 
   }
-
-Media.convertir = function(valor){
-  var measures = Media.measures;
+Medida.measures = {};
+Medida.convertir = function(valor){
+  var measures = Medida.measures;
 
   measures.c = Celcius;
   measures.k = kelvin;
   measures.f = Farenheit;
 
-  var match = Media.match(valor);
+  var match = Medida.match(valor);
   //compruebo si existe matching
   if(match){
     var val = parseFloat(match.valor),
