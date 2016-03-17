@@ -43,11 +43,30 @@ describe("Clase farenheit", function(){
     describe("Comprobamos las funciones", function(){
       it("Conversion a Celcuis", function(){
         var far = new Farenheit(552);
-        expect(celc.toCelcius()).to.equal(288,889);
+        expect(far.toCelcius()).to.equal(288,889);
       });
       it("Conversion a Kelvin", function(){
         var far = new Farenheit(0);
-        expect(celc.toKelvin()).to.equal(255,372);
+        expect(far.toKelvin()).to.equal(255,372);
+      });
+    });
+  });
+});
+
+describe("Clase Kelvin", function(){
+  describe("constructor", function(){
+    it("Deberia existir un constructor", function(){
+      var kel = new Kelvin (125,12);
+      expect(kel.valor).to.equal(125,12);
+    });
+    describe("Comprobamos las funciones", function(){
+      it("Conversion a Celcuis", function(){
+        var kel = new Kelvin(552);
+        expect(kel.toCelcius()).to.equal(533,93);
+      });
+      it("Conversion a Kelvin", function(){
+        var kel = new Kelvin(0);
+        expect(kel.toFarenheit()).to.equal(-459,67);
       });
     });
   });
