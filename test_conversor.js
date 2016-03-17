@@ -33,3 +33,22 @@ describe("Clase Celcius", function(){
     });
   });
 });
+
+describe("Clase farenheit", function(){
+  describe("constructor", function(){
+    it("Deberia existir un constructor", function(){
+      var far = new Farenheit (125);
+      expect(far.valor).to.equal(125);
+    });
+    describe("Comprobamos las funciones", function(){
+      it("Conversion a Celcuis", function(){
+        var far = new Farenheit(552);
+        expect(celc.toCelcius()).to.equal(288,889);
+      });
+      it("Conversion a Kelvin", function(){
+        var far = new Farenheit(0);
+        expect(celc.toKelvin()).to.equal(255,372);
+      });
+    });
+  });
+});
