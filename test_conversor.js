@@ -7,5 +7,10 @@ describe("Clase Temperatura", function(){
       expect(temp.valor).to.equal(13);
       expect(temp.tipo).to.equal('K');
     });
-  })
-})
+    it("Ejecucion con un solo parametro", function(){
+      var temp = new Temperatura("13K");
+      expect(temp.valor).to.equal(13);
+      expect(temp.tipo).to.equal('K');
+    });
+  });
+});
