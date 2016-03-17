@@ -4,8 +4,8 @@
     /* tipo es opcional. Debería admitir  new Medida("45.2 Km") */
     /* ademas de new Medida(45.2, "Km") */
 
-    regexp    = XRegExp('(?<valor> [-+]?\\d+(?:\.\\d+)?(?:e[+-]?\\d+)?\\s*) -?   #val  \n' +
-                        '(?<tipo> ([cCfFkK])\\s* ) -?                            #tipo', 'x');
+  var  regexp    = XRegExp('(?<valor> [-+]?\\d+(?:\.\\d+)?(?:e[+-]?\\d+)?\\s*) -?   #val \n' +
+                        '(?<tipo> ([cCfFkK])\\s* ) -?                            #tipo \n', 'x');
 
     if(!tipo){
       var val = XRegExp.exec(valor, regexp);
