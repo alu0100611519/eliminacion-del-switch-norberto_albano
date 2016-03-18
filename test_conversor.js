@@ -4,50 +4,50 @@ describe("Clase Temperatura", function(){
   describe("constructor", function(){
     it("Deberia existir un constructor", function(){
       var temp = new Temperatura(13, "K");
-      expect(temp.valor).to.equal(13);
-      expect(temp.tipo).to.equal('K');
+      expect(temp.value).to.equal(13);
+      expect(temp.type).to.equal('K');
     });
     it("Ejecucion con un solo parametro", function(){
       var temp = new Temperatura("13K");
-      expect(temp.valor).to.equal(13);
-      expect(temp.tipo).to.equal('K');
+      expect(temp.value).to.equal(13);
+      expect(temp.type).to.equal('K');
     });
   });
 });
 
-describe("Clase Celcius", function(){
+describe("Clase Celsius", function(){
   describe("constructor", function(){
     it("Deberia existir un constructor", function(){
-      var celc = new Celsius (15e-25);
-      expect(celc.valor).to.equal(15e-25);
+      var celc = new Celsius(15);
+      expect(celc.value).to.equal(15);
     });
     describe("Comprobamos las funciones", function(){
-      it("Conversion a farenheit", function(){
-        var celc = new Celcius(552);
-        expect(celc.toFarenheit()).to.equal(1025,6);
+      it("Conversion a fahrenheit", function(){
+        var celc = new Celsius(552);
+        expect(celc.toFahrenheit()).to.equal(1025.6);
       });
       it("Conversion a Kelvin", function(){
-        var celc = new Celcius(0);
-        expect(celc.toKelvin()).to.equal(273,15);
+        var celc = new Celsius(0);
+        expect(celc.toKelvin()).to.equal(273.15);
       });
     });
   });
 });
 
-describe("Clase farenheit", function(){
+describe("Clase fahrenheit", function(){
   describe("constructor", function(){
     it("Deberia existir un constructor", function(){
-      var far = new Farenheit (125);
-      expect(far.valor).to.equal(125);
+      var far = new Fahrenheit(125);
+      expect(far.value).to.equal(125);
     });
     describe("Comprobamos las funciones", function(){
-      it("Conversion a Celcuis", function(){
-        var far = new Farenheit(552);
-        expect(far.toCelcius()).to.equal(288,889);
+      it("Conversion a Celsius", function(){
+        var far = new Fahrenheit(10e-1);
+        expect(far.toCelsius()).to.equal(-17.22222222222222);
       });
       it("Conversion a Kelvin", function(){
-        var far = new Farenheit(0);
-        expect(far.toKelvin()).to.equal(255,372);
+        var far = new Fahrenheit(0);
+        expect(far.toKelvin()).to.equal(255.3722222222222);
       });
     });
   });
@@ -56,17 +56,17 @@ describe("Clase farenheit", function(){
 describe("Clase Kelvin", function(){
   describe("constructor", function(){
     it("Deberia existir un constructor", function(){
-      var kel = new Kelvin (125,12);
-      expect(kel.valor).to.equal(125,12);
+      var kel = new Kelvin (125.12);
+      expect(kel.value).to.equal(125.12);
     });
     describe("Comprobamos las funciones", function(){
-      it("Conversion a Celcuis", function(){
+      it("Conversion a Celsius", function(){
         var kel = new Kelvin(552);
-        expect(kel.toCelcius()).to.equal(533,93);
+        expect(kel.toCelsius()).to.equal(314.85);
       });
-      it("Conversion a Kelvin", function(){
+      it("Conversion a Fahrenheit", function(){
         var kel = new Kelvin(0);
-        expect(kel.toFarenheit()).to.equal(-459,67);
+        expect(kel.toFahrenheit()).to.equal(-459.67);
       });
     });
   });

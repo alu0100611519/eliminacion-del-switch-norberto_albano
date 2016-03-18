@@ -7,7 +7,7 @@
   function Celsius(valor)
   {
     Temperatura.call(this, valor);
-    this.toFarenheit = function(){
+    this.toFahrenheit = function(){
       return ((this.value * 9/5) + 32);
     }
     this.toKelvin = function(){
@@ -16,9 +16,10 @@
   }
 
 
-  function Farenheit(valor)
+  function Fahrenheit(valor)
   {
-    this.toCelcius = function(){
+    Temperatura.call(this, valor);
+    this.toCelsius = function(){
       return ((this.value - 32) * 5/9);
     }
     this.toKelvin = function(){
@@ -28,10 +29,11 @@
 
   function Kelvin(valor)
   {
-    this.toCelcius = function(){
+    Temperatura.call(this, valor);
+    this.toCelsius = function(){
       return (this.value - 237.15);
     }
-    this.toFarenheit = function(){
+    this.toFahrenheit = function(){
       return ((this.value * 9/5) - 459.67);
     }
   }
@@ -43,12 +45,8 @@
   Celsius.prototype = new Temperatura();
   Celsius.prototype.contructor = Celsius;
 
-  Farenheit.prototype = new Temperatura();
-  Farenheit.prototype.constructor = Farenheit;
-  
+  Fahrenheit.prototype = new Temperatura();
+  Fahrenheit.prototype.constructor = Fahrenheit;
+
   Kelvin.prototype = new Temperatura();
   Kelvin.prototype.constructor = Kelvin;
-
-  exports.Temperatura = Temperatura;
-  exports.Celsius = Celsius;
-  exports.Farenheit = Farenheit;

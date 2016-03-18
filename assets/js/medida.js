@@ -4,12 +4,13 @@
     /* tipo es opcional. Debería admitir  new Medida("45.2 Km") */
     /* ademas de new Medida(45.2, "Km") */
 
-  var  regexp    = XRegExp('(?<valor> [-+]?\\d+(?:\.\\d+)?(?:e[+-]?\\d+)?\\s*) -?   #val \n' +
-                        '(?<tipo> ([cCfFkK])\\s* ) -?                            #tipo \n', 'x');
-
-    if(!tipo){
-      var val = XRegExp.exec(valor, regexp);
-      this.value = parseFloat(val.valor);
+  var  regexp = XRegExp('(?<val> [-+]?\\d+\\s*) -?       #val \n' +
+                        '(?<tipo> ([cCfFkK])\\s* ) -?    #tipo \n', 'x');
+  var val = XRegExp.exec(valor, regexp);
+console.log(val);
+    if(val){
+      this.value = parseFloat(val.val);
+      console.log(val.val);
       this.type = val.tipo;
     } else {
       this.value = valor;
@@ -31,21 +32,24 @@ Medida.measures = {};
 Medida.convertir = function(valor){
   var measures = Medida.measures;
 
-  measures.c = Celcius;
-  measures.k = kelvin;
-  measures.f = Farenheit;
+  measures.c = Celsius;
+  measures.k = Kelvin;
+  measures.f = Fahrenheit;
 
   var match = Medida.match(valor);
+  console.log(match);
   //compruebo si existe matching
   if(match){
-    var val = parseFloat(match.valor),
+    var val = match.valor,
         tipo = match.tipo1.toLowerCase();
         tipoDestino = match.tipo2.toLowerCase();
 
     try{
+
       var source = new measures[tipo](val);
-      var target = "to " + measures[tipoDestino].name;
-      return source[target]().toFixed(2) + " " + measures[tipoDestino].name;
+      var target = "to" + measures[tipoDestino].name;
+      console.log( measures[tipoDestino]);
+      return source[target]().toFixed(2) + " "+measures[destino].name;
     }catch(ex){
       console.log(ex);
       return "Error en la conversion [" + tipo + "] >> [" + tipoDestino + "]";
