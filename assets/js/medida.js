@@ -9,7 +9,7 @@
 
     if(!tipo){
       var val = XRegExp.exec(valor, regexp);
-      this.value = val.valor;
+      this.value = parseFloat(val.valor);
       this.type = val.tipo;
     } else {
       this.value = valor;
