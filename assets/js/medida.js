@@ -40,16 +40,15 @@ Medida.convertir = function(valor){
   console.log(match);
   //compruebo si existe matching
   if(match){
-    var val = match.valor,
+    var val = parseFloat(match.valor),
         tipo = match.tipo1.toLowerCase();
         tipoDestino = match.tipo2.toLowerCase();
 
     try{
-
+      console.log(measures[tipo](val));
       var source = new measures[tipo](val);
       var target = "to" + measures[tipoDestino].name;
-      console.log( measures[tipoDestino]);
-      return source[target]().toFixed(2) + " "+measures[destino].name;
+      return source[target]().toFixed(2) + " "+measures[tipoDestino].name;
     }catch(ex){
       console.log(ex);
       return "Error en la conversion [" + tipo + "] >> [" + tipoDestino + "]";
