@@ -1,4 +1,4 @@
-# Práctica OOP en JS
+﻿# Práctica OOP en JS
 
 Este repositorio aloja el codigo de la practica de conversion de temperatura con una modificacion que contemple la conversión de tipos, realizada con html, css y javascript, usando POO y haciendo uso de la herencia en javascript.
 
@@ -6,6 +6,7 @@ Este repositorio aloja el codigo de la practica de conversion de temperatura con
 **Repositorio GitHuB**
 
 * [Repositorio](https://github.com/ajyanreyu/object-oriented-programming-in-js-norbertoalbano)
+* [Pagina de la practica](http://alu0100611519.github.io/eliminacion-del-switch-norberto_albano)
 
 **Página de la práctica**
 
@@ -14,4 +15,6 @@ Este repositorio aloja el codigo de la practica de conversion de temperatura con
 
 **Página del autor**
 
-* [Web Author](http://ajyanreyu.github.io/)
+* [Web Albano](http://ajyanreyu.github.io/)
+
+
